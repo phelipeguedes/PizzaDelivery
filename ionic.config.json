@@ -1,0 +1,7 @@
+{
+  "name": "RocketDelivery",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

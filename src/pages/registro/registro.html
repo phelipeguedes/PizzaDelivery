@@ -1,0 +1,77 @@
+
+<ion-content>
+    <!-- backgroud -->
+    <div class="bg-registro">
+      <!-- ovelay -->
+      <div class="overlay">
+        
+        <div>
+          <div class="center padding-top-30">
+            <img src="./assets/imgs/foguete.png" id="img_foguete" alt="">
+          </div>
+        </div>
+  
+        <!-- textos -->
+        <div class="padding-top-10">
+          <!-- titulo -->
+          <h5 class="snow center no-margin bold">
+            Ok. Vamos lá!
+          </h5>
+          <!-- sub-titulo -->
+          <p class="snow center light no-margin mg-top-5">
+            Informe os dados solicitados
+          </p>
+        </div>
+
+        <div *ngIf="form.controls.nome.touched && form.controls.nome.errors || form.controls.email.touched && form.controls.email.errors || form.controls.senha.dirty && form.controls.senha.errors" class="alert alert-danger">
+          <span>
+            <ul *ngIf="form.controls.nome.errors && (form.controls.nome.touched || form.controls.nome.dirty)">
+              <li>O nome é obrigatório</li>
+            </ul>
+            <ul *ngIf="form.controls.email.errors && (form.controls.email.touched || form.controls.email.dirty)">
+              <li>O email é obrigatório</li>
+            </ul>
+            <ul *ngIf="form.controls.senha.errors && (form.controls.senha.touched || form.controls.senha.dirty)">
+              <li>A senha é obrigatória</li>
+            </ul>
+          </span> 
+        </div>
+        
+        <!-- form -->
+        <div class="padding-40">
+           
+            <form [formGroup]="form">
+            
+                <ion-item class="bg-transparent no-padding">
+                  <ion-label stacked>Qual é o seu nome?</ion-label>
+                  <ion-input type="text" [(ngModel)]="registro.nome"  formControlName="nome" class="snow" required></ion-input>
+                </ion-item>                
+                
+                <ion-item class="bg-transparent no-padding">
+                  <ion-label stacked>Insira o seu email</ion-label>
+                  <ion-input type="mail" [(ngModel)]="registro.email" formControlName="email" class="snow"></ion-input>
+                </ion-item>                
+
+                <ion-item class="bg-transparent no-padding">
+                    <ion-label stacked>Digite uma senha</ion-label>
+                    <ion-input type="password" [(ngModel)]="registro.senha" formControlName="senha" class="snow"></ion-input>
+                </ion-item>                
+              
+                <ion-grid>
+                  <ion-row>
+                    <ion-col col-10-sm></ion-col>
+                  </ion-row>
+                </ion-grid>
+                
+                <button ion-button round full class="btn-conta" id="btn_criar_conta" [disabled]="!form.valid" (click)="criarNovoUsuario()" >Criar conta</button>				
+            
+            </form>
+
+            <div id="tenho_conta" class="snow center mg-top-20" (click)="irParaLoginPage();">Já tenho uma conta</div>            
+        </div> 
+        <!-- form -->			
+      </div>
+    </div>
+  </ion-content>
+  
+  

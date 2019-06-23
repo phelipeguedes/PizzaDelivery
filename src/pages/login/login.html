@@ -1,0 +1,51 @@
+<!-- login -->
+<ion-content>
+	<!-- backgroud -->
+	<div class="bg-login" *ngIf="login">
+		<!-- ovelay -->
+		<div class="overlay">
+
+			<div>
+				<div class="center padding-top-30">
+					<img src="./assets/imgs/foguete.png" id="img_foguete" alt="">
+				</div>
+			</div>
+
+			<!-- textos -->
+			<div class="padding-top-10">
+				<!-- titulo -->
+				<h5 class="snow center no-margin bold">
+					Que bom te ver por aqui!
+				</h5>
+				<!-- sub-titulo -->
+				<p class="snow center light no-margin mg-top-5">
+					Faça login para continuar
+				</p>
+			</div>
+
+			<!-- form -->
+			<div class="padding-40">
+
+				<ion-item class="bg-transparent no-padding">
+					<ion-label stacked>Email</ion-label>
+					<ion-input type="text" [(ngModel)] ="login.email" class="snow"></ion-input>
+				</ion-item>
+
+				<ion-item class="bg-transparent no-padding">
+					<ion-label stacked>Senha</ion-label>
+					<ion-input type="password" [(ngModel)]="login.senha"  class="snow"></ion-input>
+				</ion-item>
+
+				<ion-grid>
+					<ion-row>
+						<ion-col col-10-sm></ion-col>
+					</ion-row>
+				</ion-grid>
+
+				<button ion-button round full class="btn-conta" id="btn_entrar" (click)="fazerLogin();">Entrar</button>
+
+				<div id="criar_conta" class="snow center mg-top-20" (click)="irParaRegistroPage();">Criar nova conta</div>
+			</div>
+		</div>
+	</div>
+</ion-content>
