@@ -25,10 +25,13 @@ export class LoginPage {
 
     this.authProvider.login(this.login).then(res => {
       console.log('login efetuado c/ sucesso: ', res);
+      
       this.notificacoesProvider.mostrarToast('Login realizado com sucesso!');
       this.notificacoesProvider.loading.dismiss();
+    
     }).catch(erro => {
       console.log('erro ao fazer login: ', erro);
+      
       this.notificacoesProvider.mostrarAlerta('<p>Login inválido</p>', '<p class="alert-paragrafo">Nome de usuário(a)/senha incorretos.</p>');
       this.notificacoesProvider.loading.dismiss();      
     });
