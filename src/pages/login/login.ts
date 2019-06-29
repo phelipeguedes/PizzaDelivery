@@ -1,8 +1,10 @@
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { NotificacoesProvider } from './../../providers/notificacoes/notificacoes';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { RegistroPage } from '../registro/registro';
 import { AuthProvider } from '../../providers/auth/auth';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -11,7 +13,8 @@ import { AuthProvider } from '../../providers/auth/auth';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private notificacoesProvider: NotificacoesProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private notificacoesProvider: NotificacoesProvider,
+    private firebaseProvider:FirebaseProvider, private storage: Storage) {
   }
 
   login = {email: '', senha: ''};
@@ -25,9 +28,19 @@ export class LoginPage {
 
     this.authProvider.login(this.login).then(res => {
       console.log('login efetuado c/ sucesso: ', res);
-      
-      this.notificacoesProvider.mostrarToast('Login realizado com sucesso!');
-      this.notificacoesProvider.loading.dismiss();
+
+      // identificação do usuário(a)
+      let userId = res.user.uid;
+
+      this.firebaseProvider.getUsuario(userId).then((res) => {
+          let data = res.data();
+          
+          this.storage.set('usuario', data).then(() => {
+            this.notificacoesProvider.mostrarToast('Login realizado com sucesso!');
+            this.notificacoesProvider.loading.dismiss();
+            this.navCtrl.setRoot('MenuPage');
+          });
+      })
     
     }).catch(erro => {
       console.log('erro ao fazer login: ', erro);

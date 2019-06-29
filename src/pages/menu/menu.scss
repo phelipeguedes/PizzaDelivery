@@ -1,0 +1,71 @@
+page-menu {
+
+    .toolbar-background {
+        background: #fdb813;
+    }
+
+    .titulo-pagina {
+        margin-top: -30px;
+    }
+
+    .toolbar-title {
+        text-align: center;
+        font-weight: bold;
+        color: #4B4237;
+        font-size: 20px;
+    }
+
+    // botão do menu
+    button.block {
+        background-color: transparent !important;        
+    }
+
+    // listras do botão do menu
+    ion-icon.block {
+        color: #4B4237;
+    }
+
+    h4.lanche {
+        margin: 5px 0px 20px 0px !important;
+        font-weight: bold;
+    }
+    
+    .border-img {
+        border: #4B4237 solid;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    ion-list {
+        margin-bottom: 40px !important;
+    }
+
+    ion-item {
+        padding: 5px 0px !important;
+        border-bottom: 2px solid #4B4237 !important;
+    }
+
+    // borda padrão do ionic (separa os itens da lista)
+    .item-inner {
+        border-bottom: 0px !important; 
+    }
+
+    .titulo-item {
+        font-weight: bold;
+        color: #4B4237;
+    }
+
+    .descricao-item {
+        font-style: italic;
+        font-size: 100;
+        width: 80%;
+    }
+
+    .preco-item {
+        color: #4B4237;
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+    }
+    
+}
