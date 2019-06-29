@@ -1,3 +1,4 @@
+import { IonicStorageModule } from '@ionic/storage';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -6,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 //pages
 import {LoginPageModule} from '../pages/login/login.module';
@@ -29,13 +31,15 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp),    
     //pages
     LoginPageModule,
     RegistroPageModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    IonicStorageModule.forRoot(),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,7 +52,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     NotificacoesProvider,
-    FirebaseProvider
+    FirebaseProvider, 
+    Storage
   ]
 })
 export class AppModule {}

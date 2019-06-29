@@ -38,7 +38,7 @@
     "ionic-angular": "3.9.3",
     "ionicons": "3.0.0",
     "rxjs": "^6.3.3",
-    "rxjs-compat": "^6.5.2",
+    "rxjs-compat": "^6.3.3",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.29"
   },
