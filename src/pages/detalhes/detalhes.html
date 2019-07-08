@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="titulo-pagina">
+      Detalhes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="hamburguer" >
+    <img [src]="hamburguer?.foto" alt="foto do hambúrguer">
+    <ion-card-content>
+        <ion-card-title>            
+          {{ hamburguer?.nome }}
+        </ion-card-title>
+        <!-- formatação da moeda brasileira (R$) -->
+        <p>{{ hamburguer?.preco | currency: 'BRL' }}</p>
+        <p class="descricao">{{ hamburguer?.descricao }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="pizza" >
+    <img [src]="pizza?.foto" alt="foto da pizza">
+    <ion-card-content>
+      <ion-card-title>
+        {{ pizza?.nome }}
+      </ion-card-title> 
+      <!-- formatação da moeda brasileira (R$) -->
+      <p>{{ pizza?.preco | currency: 'BRL' }}</p>
+      <p class="descricao">{{ pizza?.descricao }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="bebida" class="card-bebida">
+    <img [src]="bebida.foto" alt="foto da bebida">
+    <ion-card-content>
+      <ion-card-title>
+        {{ bebida?.nome }}
+      </ion-card-title> 
+      <!-- formatação da moeda brasileira (R$) -->
+      <p>{{ bebida?.preco | currency: 'BRL' }}</p> 
+      <p class="descricao">{{ bebida?.descricao }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,43 @@
+page-detalhes {
+
+    .toolbar-background {
+        background: #fdb813;
+    }
+
+    // título da página
+    .toolbar-title {        
+        font-weight: bold;
+        color: #4B4237;
+        font-size: 20px;
+    }
+
+    .card {
+        max-width: 100%;
+        min-height: 60%;
+        max-height: 90%;
+        border-radius: 12px;       
+    }
+
+    /* título do card (nome do lanche) */
+    .card-title {
+        font-size: 1.9rem !important;
+    }
+
+    /* scroll vertical na descrição dos produtos */
+    ion-card-content.card-content {
+        overflow: scroll !important;        
+    }
+
+    .descricao {
+        text-align: justify;
+        text-indent: 2.7em;
+        padding-top: 2%;        
+    }
+
+    .card-bebida {
+        min-height: 60%;
+        max-height: 75%;
+        overflow: scroll !important;
+    }
+
+}

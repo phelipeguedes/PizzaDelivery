@@ -1,13 +1,15 @@
 
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireDatabase, snapshotChanges } from '@angular/fire/database';
+import { map } from 'rxjs/operators';
+
+/* Funções de acesso aos dados armezenados no firebase */
 
 @Injectable()
 export class FirebaseProvider {
 
-  private pathHamburgueres = 'Hamburgueres/';
-
-  constructor(private fireStore: AngularFirestore) {
+  constructor(private fireStore: AngularFirestore, private angularFireDB: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
   }
 
@@ -24,14 +26,28 @@ export class FirebaseProvider {
     return this.fireStore.collection('Hamburgueres');
   }
 
+  // pega um registro da coleção de hambúrgueres
+  getDetalheHamburguer(id:string) {
+    return this.fireStore.collection('Hamburgueres').doc(id).get();
+  }
+
   // retorna a lista de bebidas cadastrada no firebase
   getBebidas() {
     return this.fireStore.collection('Bebidas');
   }
 
+  getDetalheBebida(id:string) {
+    return this.fireStore.collection('Bebidas').doc(id).get();
+  }
+
   // retorna a lista de pizzas cadastradas no firebase
   getPizzas() {
     return this.fireStore.collection('Pizzas');
+  }
+
+   // pega um registro da coleção de pizzas
+  getDetalhePizza(id:string) {
+    return this.fireStore.collection('Pizzas').doc(id).get();
   }
 
 }

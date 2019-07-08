@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button icon-only class="block">
-      <ion-icon name="menu" class="block"></ion-icon>
-    </button>
 
     <ion-title class="titulo-pagina">
       Menu
@@ -16,14 +13,14 @@
 
   <!-- lista de pizzas exibidas no cardápio -->
   <ion-list>
-      <ion-item *ngFor="let pizza of pizzas | async">
+      <ion-item (click)="mostrarDetalhes(pizza.id, pizza.tipo)"  *ngFor="let pizza of pizzas | async">
         <ion-avatar item-start>
           <img src="{{ pizza.foto }}" class="border-img">
         </ion-avatar>
         
         <h2 class="titulo-item">{{ pizza.nome }}</h2>
         <p class="descricao-item">{{ pizza.descricao }}</p>
-        <p class="preco-item">R$ {{ pizza.preco }}</p>
+        <p class="preco-item">{{ pizza.preco | currency: 'BRL' }}</p>
       </ion-item>
   </ion-list>
   
@@ -31,14 +28,14 @@
 
   <!-- lista de hambúrgueres exibidas no cardápio -->
   <ion-list>
-      <ion-item *ngFor="let hamburguer of hamburgueres | async">
+      <ion-item (click)="mostrarDetalhes(hamburguer.id, hamburguer.tipo)"  *ngFor="let hamburguer of hamburgueres | async">
         <ion-avatar item-start>
           <img src="{{ hamburguer.foto }}" class="border-img">
         </ion-avatar>
         
         <h2 class="titulo-item">{{ hamburguer.nome }}</h2>
         <p class="descricao-item">{{ hamburguer.descricao }}</p>
-        <p class="preco-item">R$ {{ hamburguer.preco }}</p>
+        <p class="preco-item">{{ hamburguer.preco | currency: 'BRL' }}</p>
       </ion-item>
   </ion-list>
 
@@ -46,14 +43,14 @@
   
   <!-- lista de bebidas exibidas no cardápio -->
   <ion-list>
-    <ion-item *ngFor="let bebida of bebidas | async">
+    <ion-item (click)="mostrarDetalhes(bebida.id, bebida.tipo)" *ngFor="let bebida of bebidas | async">
       <ion-avatar item-start>
         <img src="{{ bebida.foto }}" class="border-img">
       </ion-avatar>
 
       <h2 class="titulo-item">{{ bebida.nome }}</h2>
       <p class="descricao-item">{{ bebida.descricao }}</p>
-      <p class="preco-item">R$ {{ bebida.preco }}</p>
+      <p class="preco-item">{{ bebida.preco | currency: 'BRL' }}</p>
     </ion-item>
   </ion-list>
 

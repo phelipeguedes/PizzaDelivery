@@ -1,3 +1,98 @@
 page-home {
 
+    // cor do cabeçalho
+    .toolbar-background {
+        background: #fdb813;
+        border: none !important;
+    }
+
+    // titúlo da página
+    .toolbar-title {        
+        font-weight: bold;
+        color: #4B4237;
+        font-size: 20px;
+    }
+
+    // botão do menu
+    button.block {
+        background-color: transparent !important;        
+    }
+
+    // cor dos ícones (carrinho e botão menu)
+    .icone-branco {
+        color: #ffffff;
+    }
+
+    .icone-botao {
+        margin-top: 25% !important;
+    }
+
+    div.cabecalho {
+        background: #fdb813;
+        width: 100%;
+        height: 50%;
+    }
+
+    div.texto-centralizado {
+        width: 100%;
+        position: absolute;        
+    }
+
+    div.texto-centralizado > h5 {
+        text-align: center;
+        font-weight: 800;
+        margin: 20% 0 0 0;
+    }
+
+    .slides {
+        background-color: #4B4237;
+        position: absolute;
+        width: 80%;
+        height: 30%;
+        top: 30%;
+        margin-left: 10%;
+        border-radius: 12px;
+    }
+
+     .slide-custom {
+        margin: auto; 
+        background-size: cover; 
+        border-radius: 10px;     
+     }
+
+     .slide-zoom {        
+        width: 100%;
+        height: 100%;
+     }
+
+     .lanche-info {
+         position: absolute;
+         bottom: 10px;
+         left: 20px;
+         font-weight: bold;
+         color: #ffffff;
+         text-align: left;
+     }
+
+     .lanche-nome {
+        margin-top: 0px ;        
+        margin-bottom: 0px; 
+        font-size: 14px;         
+     }
+
+     .lanche-preco {
+        margin-top: 0px ;        
+        margin-bottom: 0px;
+        font-size: 11px;
+     }
+
+     // botão p/ adicionar item ao carrinho
+     .add-icone {
+         position: absolute;
+         bottom: 10px;
+         right: 20px;
+         color: #ffffff;
+     }
+
+     
 }

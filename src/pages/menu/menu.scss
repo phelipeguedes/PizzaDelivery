@@ -4,12 +4,8 @@ page-menu {
         background: #fdb813;
     }
 
-    .titulo-pagina {
-        margin-top: -30px;
-    }
-
+    // título da página
     .toolbar-title {
-        text-align: center;
         font-weight: bold;
         color: #4B4237;
         font-size: 20px;
@@ -17,12 +13,13 @@ page-menu {
 
     // botão do menu
     button.block {
+        float: right;
         background-color: transparent !important;        
     }
 
     // listras do botão do menu
     ion-icon.block {
-        color: #4B4237;
+        color: #fff;
     }
 
     h4.lanche {
@@ -31,7 +28,7 @@ page-menu {
     }
     
     .border-img {
-        border: #4B4237 solid;
+        border: #4B4237 2px solid;
         width: 50px !important;
         height: 50px !important;
     }

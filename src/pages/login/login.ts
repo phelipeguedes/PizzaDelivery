@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { RegistroPage } from '../registro/registro';
 import { AuthProvider } from '../../providers/auth/auth';
 import { Storage } from '@ionic/storage';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -38,7 +39,7 @@ export class LoginPage {
           this.storage.set('usuario', data).then(() => {
             this.notificacoesProvider.mostrarToast('Login realizado com sucesso!');
             this.notificacoesProvider.loading.dismiss();
-            this.navCtrl.setRoot('MenuPage');
+            this.navCtrl.setRoot(HomePage);
           });
       })
     

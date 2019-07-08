@@ -1,3 +1,4 @@
+import { DetalhesPage } from './../detalhes/detalhes';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { firebaseConfig } from './../../configs/firebase';
 
@@ -38,6 +39,11 @@ export class MenuPage {
 
     // atribuição da listagem de pizzas
     this.pizzas = this.firebaseProvider.getPizzas().valueChanges();
+  }
+
+  mostrarDetalhes(id:string, tipo:string) {
+    console.log('id:', id, 'tipo: ', tipo);
+    this.navCtrl.push(DetalhesPage, {id, tipo});
   }
 
 }
