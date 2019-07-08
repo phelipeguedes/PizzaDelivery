@@ -1,3 +1,4 @@
+import { MenuPage } from './../pages/menu/menu';
 import { IonicStorageModule } from '@ionic/storage';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -10,8 +11,11 @@ import { HomePage } from '../pages/home/home';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 //pages
+import {CarrinhoPageModule} from '../pages/carrinho/carrinho.module';
+import {MenuPageModule} from '../pages/menu/menu.module';
 import {LoginPageModule} from '../pages/login/login.module';
 import {RegistroPageModule} from '../pages/registro/registro.module';
+import {DetalhesPageModule} from '../pages/detalhes/detalhes.module';
 
 //firebase
 import {firebaseConfig} from '../configs/firebase';
@@ -24,6 +28,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { NotificacoesProvider } from '../providers/notificacoes/notificacoes';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -33,7 +38,10 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     BrowserModule,
     IonicModule.forRoot(MyApp),    
     //pages
+    CarrinhoPageModule,
+    MenuPageModule,
     LoginPageModule,
+    DetalhesPageModule,
     RegistroPageModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
@@ -44,7 +52,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    MenuPage,
   ],
   providers: [
     StatusBar,
